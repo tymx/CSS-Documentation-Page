@@ -1,0 +1,226 @@
+/*
+
+  Color Palette:
+  - Raisin Black : #272727;
+  - New York Pink : #D37C7C;
+  - Mauvelous : #EF9E9E;
+  - Pale Chestnut : #D8B3B3;
+  - Rosy Brown : #B79191;
+
+*/
+
+/*
+  Creating variables inside the :root element allows for them to be available throughout the whole web page.
+*/
+:root {
+  --raisin-black: #272727;
+  --lighter-black: #515151;
+  --new-york-pink: #D37C7C;
+  --mauvelous: #EF9E9E;
+  --pale-chestnut: #D8B3B3;
+  --rosy-brown: #B79191;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* NAVIGATION */
+
+.nav-column {
+  position: fixed;
+  width: 100vw;
+}
+
+.nav-column #navbar{
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  display: grid;
+  grid-auto-flow: row;
+  z-index: 1;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#navbar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid black;
+  background-color: var(--mauvelous);
+  color: var(--raisin-black);
+}
+
+#navbar > div > a {
+  text-decoration: none;
+  color: var(--raisin-black);
+}
+
+.toggle-bar {
+  display: grid;
+  justify-self: stretch;
+  background-color: var(--raisin-black);
+  justify-items: center;
+}
+
+.toggle-bar .checkbox {
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.toggle-bar .hamburger-icon {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  background-color: var(--lighter-black);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Hamburger Icon */
+
+/* Second Line */
+.toggle-bar .hamburger-icon > div {
+  position: relative;
+  background-color: var(--mauvelous);
+  width: 120%;
+  height: 2px;
+} 
+
+/* First and Third Line */
+.toggle-bar .hamburger-icon > div:before,
+.toggle-bar .hamburger-icon > div:after {
+  content: '';
+  position: absolute;
+  background-color: var(--mauvelous);
+  width: 100%;
+  height: 2px;
+  top: -10px;
+  z-index: 1;
+  background: inherit;
+}
+/* Third Hamburger Line */
+.toggle-bar .hamburger-icon > div:after {
+  top: 10px;
+}
+
+/* Checkbox Clicked */
+
+.toggle-bar .checkbox:checked + .hamburger-icon {
+  background-color: var(--mauvelous);
+}
+
+.toggle-bar .checkbox:checked + .hamburger-icon > div {
+  transform: rotate(135deg);
+  width: 170%;
+  background-color: var(--lighter-black);
+}
+
+.toggle-bar .checkbox:checked + .hamburger-icon > div:before,
+.toggle-bar .checkbox:checked + .hamburger-icon > div:after {
+  top: 0;
+  transform: rotate(90deg);
+  background-color: var(--lighter-black);
+}
+
+.toggle-bar .checkbox:checked + #navbar {
+  visibility: visibile;
+} 
+
+/* DOCUMENTATION */
+
+.note{
+  color: gray;
+}
+
+/* Box-Model */
+
+#box-model {
+  text-align: center;
+  margin-left: 1.3em;
+  margin-right: 1.3em;
+  max-width: 700px;
+  min-width: 337px;
+}
+
+#box-model p {
+  padding: 0;
+  margin: 0 0 1.3em 0;
+}
+
+#box-model #content p{
+  margin: 0;
+}
+
+#margin {
+  padding: 2em;
+  padding-top: 1.2em;
+  background-color: var(--new-york-pink);
+  padding-bottom: 3em;
+}
+
+#border {
+  padding: 2em;
+  padding-top: 1.2em;
+  background-color:  var(--mauvelous);
+  padding-bottom: 3em;
+}
+
+#padding {
+  padding: 2em;
+  padding-top: 1.2em;
+  background-color: var(--pale-chestnut);
+  padding-bottom: 3em;
+}
+
+#content{
+  padding: 2em;
+  padding-top: 1.7em;
+  background-color: var(--rosy-brown);
+}
+
+#box-model-example {
+  margin: 1.2em;
+  border: 0.2em solid black;
+  padding: 1.2em;
+  text-align: center;
+} 
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 1350px){
+  .nav-column #navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    height: 100vh;
+    width: 35vw;
+  }
+
+  .toggle-bar{
+    visibility: hidden;
+  }
+
+  .toggle-bar .checkbox:not(:checked) + #navbar {
+    visibility: visibile;
+  } 
+}

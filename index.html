@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- NAVIGATION COLUMN -->
+  <div class="nav-column">
+    <div class="toggle-bar" id="fixedBar">
+        <!--Checkbox-->
+        <input type="checkbox" class="checkbox" id="check" onclick="navAppear()">
+        <!--Three Bar Icon -->
+        <div class="hamburger-icon"><div></div></div>
+    </div>
+    <nav id="navbar">
+      <!-- Title of WebPage-->
+      <div><header>CSS Documentation</header></div>
+      <!-- Links to Different Sections -->
+      <div><a class="nav-link" href="#Introduction">Introduction</a></div>
+      <div><a class="nav-link" href="#CSS_Syntax">CSS Syntax</a></div>
+      <div><a class="nav-link" href="#CSS_Selectors">CSS Selectors</a></div>
+      <div><a class="nav-link" href="#CSS_Units">CSS Units</a></div>
+      <div><a class="nav-link" href="#CSS_Box_Model">CSS Box Model</a></div>
+      <div><a class="nav-link" href="#Reference">Reference</a></div>
+    </nav>
+  </div>
+  <!-- INFO COLUMN -->
+  <!--
+  <div class="tech-column">
+      <main id="main-doc">
+          <!-- Introduction Section 
+          <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p class="info">CSS(Cascading Style Sheets); by definition; is a stylesheet language used to describe the presentation of a document written in markup languages such as HTML or XML. HTML/XML is the information(text, images, video, etc.) on the webpage while CSS is the design of the webpage. It is used to style and create layouts around the information provided in an HTML/XML file. Without CSS; this webpage would like this:
+            </p>
+            <img src="" alt="">
+            <p class="info">When a browser opens a web page; it converts both HTML and CSS into the DOM (Document Object Model). And the browser then displays the DOM; which is what the user sees. In order to be able to use CSS and understand how it styles a webpage, you should make sure:
+            </p>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML">Introduction to HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works">How CSS Works</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">In-depth definition of DOM</a></li>
+            </ul>
+          </section>
+          <!-- CSS Syntax Section 
+          <section class="main-section" id="CSS_Syntax">
+            <header>CSS Syntax</header>
+            CSS Declaration Block
+            <h3>CSS Declaration</h3>
+            <p>In order to change an HTML element; you need to make a CSS declaration on that specific element. CSS declarations consist of two things:</p>
+            <ul>
+              <li>The property</li>
+              <ul>
+                <li>Features you want to change about the HTML element.</li>
+                <li>Examples:</li>
+                <ul>
+                  <li>Font Size</li>
+                  <li>Background Color</li>
+                  <li>Width and Height of an Image</li>
+                </ul>
+              </ul>
+            <li>The value</li>
+            <ul>
+                <li>Numerical or string value of how “much” you want to change that feature.</li>
+                <li>Numerical values paired with units of the developer’s choosing. More explained on units in <a href="#CSS_Units">CSS Units</a></li>
+            </ul>  
+            <li>Examples:</li>
+            <ul>
+              <code class="code-block">
+                /* Element's background color is changed to red */
+                background-color: red; // Colon seperates the property and value
+              </code>
+              <li>26 would be the value is the font size in the HTML element</li>
+              <li>Red would be the value of the background color property of an HTML element</li>
+            </ul>
+            </ul>
+            <!-- CSS Blocks
+            <h3>CSS Blocks</h3>
+            <p>CSS declarations can be grouped together in a CSS block; which makes changing many aspects of an HTML element easier and makes code more organized. The example below groups two declarations together and changes all h1 tags on the page.</p>
+            <code class="code-block">
+              /* This CSS block changes the h1 element text color to be red and also changes its font style to be italic. */
+              h1 {
+                color: red;
+                font-style: italic;
+              }
+            </code>
+            <div class="note">
+              <p> Inside the bracket and star combo characters /* */ is where comments/notes can be made about the CSS you are writing what its exactly doing.</p>
+            </div>
+          </section>
+          <!-- CSS Selectors
+          <section class="main-section" id="CSS_Selectors">
+            <header>CSS Selectors</header>
+            <p>There are six types of selectors that can change HTML elements and depending on their specificity can override other selectors changes to an element.The main ones are type, class, and id. </p>
+            <h3>Type Selector</h3>
+            <p>The type selector is where you select a specific element and change all its appearances on the page. The previous code is an example of how to use type selectors. All h1 on the page would be red and italized. Another example would be having all the heading 1 and paragraph tags have text that is green.</p>
+            <code class="code-block">
+              h1, p {
+                color: green;
+              }
+            </code>
+            <div class="note">
+              <p>CSS blocks can motify more than one element at time using a ",". This goes for class and id selectors as well. You can fix a CSS block with a combination of type, class, and id selectors.</p>
+            </div>
+            <h3>Class Selector</h3>
+            <p>The class selector is when you select an element based on the class attribute given to that element in the HTML code. For example, the HTML code below gives a paragraph tag a class attribute of red.</p>
+            <code class="code-block">
+              &lt;p class="red"&gt;Hello&lt;/p&gt;
+            </code>
+            <p>In order to target the paragraph tags with class attribute "red" in CSS, you write CSS blocks such as this:</p>
+            <code class="code-block">
+              .red {
+                color: red;
+              }
+            </code>
+            <p>The class selector is identified in CSS with "." before calling the class in the CSS block. Whatever element has the class attribute "red" will change the text in that element to be red. Class selectors are used when you want to change mutiple elements and give them the same changes, but don't want to change all of that element type.</p>
+            <h3>ID Selector</h3>
+            <p>The id selector is similar to the class selector as it selects an element based on the id attribute of that element. The code below shows how to assign an element as id attribute in HTML:</p>
+            <code class="code-block">
+              &lt;button id="submit"&gt;Submit&lt;/button&gt;
+            </code>
+            <p>In order to target a tag with id attribute "submit" in CSS, you write CSS blocks such as this:</p>
+            <code class="code-block">
+              #submit {
+                border: 4px solid blue;
+              }
+            </code>
+            <p>The id selector is identified in CSS with "#" before calling the id in the CSS block. Whatever element has the id attribute "submit" will change the border of that element to be a solid blue line that is 4 pixels wide.</p>
+            <h3>Specificity</h3>
+            <p>All selectors have a level of specificity and depending on that level, a selector can override the property another selector had already changed. Out of the main three selectors: type has the lowest, class is second, and id has the highest (the id selector has the highest specificity out of all selectors). To give an example of specificity; the code below shows three CSS blocks overriding the same element. Even though the type selector was used first; the text will be blue since the id selector has the highest specificity. Comment out the id CSS block and the text will be green since the class selector is the next selector on that element with the highest specificity being called on in the CSS code.</p>
+            <code class="code-block">
+              &lt;p class="p1" id="p2"&gt;Hello there&lt;p&gt;
+            </code>
+            <br>
+            <code class="code-block">
+              p {
+                color: red;
+              }
+              .p1{
+                color: green;
+              }
+              #p2{
+                color: blue;
+              }
+            </code>
+            <p class="note">For more information on the other selectors, visit this article called <a href="https://css-tricks.com/how-css-selectors-work/">Beginner Concepts: How CSS Selectors Work</a> by <a href="https://css-tricks.com/">CSS-Tricks</a>.</p>
+          </section>
+          <!-- CSS Units 
+          <section class="main-section" id="CSS_Units">
+            <header>CSS Units</header>
+            <p>There are many different units that can be paired with values. Some properties don't even require units. Here are some good units to know and use:</p>
+            <div id="table">
+              <div id="unit-column">
+                  <p class="column-title">Units</p>
+                  <p class="column-item">px</p>
+                  <p class="column-item">em</p>
+                  <p class="column-item">rem</p>
+                  <p class="column-item">lh</p>
+                  <p class="column-item">rlh</p>
+                  <p class="column-item">vw</p>
+                  <p class="column-item">vh</p>
+              </div>
+              <div id="des-column">
+                  <p class="column-title">Description</p>
+                  <p class="column-item">Pixels</p>
+                  <p class="column-item">Font size of the element.</p>
+                  <p class="column-item">Font size of the root element.</p>
+                  <p class="column-item">Line height of the element.</p>
+                  <p class="column-item">Line height of the root element.</p>
+                  <p class="column-item">1% of viewport's width.</p>
+                  <p class="column-item">1% of viewport's height.</p>
+              </div>
+            </div>
+            <p class="note">For more information about units; vist <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units">MDN CSS values and units</a>. Watch <a href="https://www.youtube.com/watch?v=H4UtKu11yXg">Simple Explanation Of rem & em CSS Units</a>.</p>
+          </section>
+          <!-- CSS Box Model 
+          <section class="main-section" id="CSS_Box_Model">
+            <header>CSS Box Model</header>
+            <p>Every element on an HTML page is rendered by the browser's engine as a rectangular box. All elements' rectangular box consist of four parts. These parts are called content, padding, margin, and border. Example of the box model is below.</p>
+            <div id="box-model">
+              <div id="margin">
+                <p>Margin</p>
+                <div id="border">
+                  <p>Border</p>
+                  <div id="padding">
+                    <p>Padding</p>
+                    <div id="content">
+                      <p>Content</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>The CSS Box Model is very important to know and understand in order to style elements how you want them on the page. With the example below; picture the margin as the white space surrounding the black solid line border. Margin seperates elements from each other. Padding is the white space inside the border box seperating the content and border from each other. Content is the text "CSS Box Model" itself.</p>
+            <p id="box-model-example">CSS Box Model</p>
+          </section>
+          Reference
+          <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <p>All documentation on this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN CSS Section</a></p>
+          </section>
+        </main>
+  </div>
+
+  <!-- FOOTER 
+  <footer id="footer">
+    <p>Taylor Martinez | CSS Documentation Page, Copyright &copy; 2019</p>
+  </footer>
+
+-->
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script src="doc.js"></script>
+</body>
+</html>
