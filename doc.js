@@ -1,24 +1,46 @@
-var checkBox = document.getElementById("check");
-var navbar = document.getElementById("navbar");
+var nav = document.querySelector('#navbar');
+var icon = document.querySelector('.hamburger-icon');
+var realIcon = document.querySelector('.hamburger-icon > div');
+var cross = document.querySelector('.cross');
 
-function navAppear(){
-  if(checkBox.checked){
-    navbar.style.visibility = "visible";
-  } else {
-    navbar.style.visibility = "hidden";
-  }
+function navAppear() {
+  icon.addEventListener('click', () => {
+    nav.classList.toggle('nav-hidden');
+    nav.classList.toggle('nav-bar-visible');
+    icon.classList.toggle('hidden');
+    realIcon.classList.toggle('hidden');
+    cross.classList.toggle('cross-visible');
+    cross.classList.toggle('hidden');
+  });
+
+  cross.addEventListener('click', () => {
+    cross.classList.toggle('hidden');
+    cross.classList.toggle('cross-visible');
+    icon.classList.toggle('cross-visible');
+    icon.classList.toggle('hidden');
+    realIcon.classList.toggle('cross-visible');
+    realIcon.classList.toggle('hidden');
+    nav.classList.toggle('nav-hidden');
+    nav.classList.toggle('nav-bar-visible');
+  });
+
 }
 
-function desktopWindow(query) {
-  if(query.matches){
-    // checkBox.disabled = true;
-    document.getElementsByClassName("toggle-bar").style.visibility = "hidden";
-    navbar.style.visibility = "visible";
-  } else {
-    // checkBox.disabled = false;
+function navLinksClose(){
+  var nav_links = document.getElementsByTagName('a');
+
+  for(var i = 0; i < nav_links.length; i++){
+    nav_links[i].addEventListener('click', () => {
+      nav.classList.toggle('nav-bar-visible');
+      nav.classList.toggle('nav-hidden');
+      icon.classList.toggle('cross-visible');
+      icon.classList.toggle('hidden');
+      realIcon.classList.toggle('cross-visible');
+      realIcon.classList.toggle('hidden');
+    });
   }
+
 }
 
-var query = window.matchMedia("(min-width: 1350px)");
-desktopWindow(query);
-query.addListener(desktopWindow);
+navAppear();
+navLinksClose();

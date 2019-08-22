@@ -8,31 +8,34 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <!-- NAVIGATION COLUMN -->
-  <div class="nav-column">
-    <div class="toggle-bar" id="fixedBar">
-        <!--Checkbox-->
-        <input type="checkbox" class="checkbox" id="check" onclick="navAppear()">
-        <!--Three Bar Icon -->
-        <div class="hamburger-icon"><div></div></div>
+  <div class="nav-menu">
+    <!--Three Bar Icon -->
+    <div class="toggle-button">
+      <div class="hamburger-icon">
+        <div></div>
+      </div>
+      <div class="cross hidden"><div></div></div>
     </div>
-    <nav id="navbar">
-      <!-- Title of WebPage-->
-      <div><header>CSS Documentation</header></div>
-      <!-- Links to Different Sections -->
-      <div><a class="nav-link" href="#Introduction">Introduction</a></div>
-      <div><a class="nav-link" href="#CSS_Syntax">CSS Syntax</a></div>
-      <div><a class="nav-link" href="#CSS_Selectors">CSS Selectors</a></div>
-      <div><a class="nav-link" href="#CSS_Units">CSS Units</a></div>
-      <div><a class="nav-link" href="#CSS_Box_Model">CSS Box Model</a></div>
-      <div><a class="nav-link" href="#Reference">Reference</a></div>
+    <nav id="navbar" class="nav-bar nav-hidden">
+      <ul>
+        <!-- Title of WebPage-->
+        <li><header>CSS Documentation</header></li>
+        <!-- Links to Different Sections -->
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#CSS_Syntax">CSS Syntax</a></li>
+        <li><a class="nav-link" href="#CSS_Selectors">CSS Selectors</a></li>
+        <li><a class="nav-link" href="#CSS_Units">CSS Units</a></li>
+        <li><a class="nav-link" href="#CSS_Box_Model">CSS Box Model</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
     </nav>
   </div>
   <!-- INFO COLUMN -->
-  <!--
   <div class="tech-column">
       <main id="main-doc">
-          <!-- Introduction Section 
+          <!-- Introduction Section -->
           <section class="main-section" id="Introduction">
             <header>Introduction</header>
             <p class="info">CSS(Cascading Style Sheets); by definition; is a stylesheet language used to describe the presentation of a document written in markup languages such as HTML or XML. HTML/XML is the information(text, images, video, etc.) on the webpage while CSS is the design of the webpage. It is used to style and create layouts around the information provided in an HTML/XML file. Without CSS; this webpage would like this:
@@ -46,7 +49,7 @@
               <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">In-depth definition of DOM</a></li>
             </ul>
           </section>
-          <!-- CSS Syntax Section 
+          <!-- CSS Syntax Section -->
           <section class="main-section" id="CSS_Syntax">
             <header>CSS Syntax</header>
             CSS Declaration Block
@@ -78,7 +81,7 @@
               <li>Red would be the value of the background color property of an HTML element</li>
             </ul>
             </ul>
-            <!-- CSS Blocks
+            <!-- CSS Blocks -->
             <h3>CSS Blocks</h3>
             <p>CSS declarations can be grouped together in a CSS block; which makes changing many aspects of an HTML element easier and makes code more organized. The example below groups two declarations together and changes all h1 tags on the page.</p>
             <code class="code-block">
@@ -92,7 +95,7 @@
               <p> Inside the bracket and star combo characters /* */ is where comments/notes can be made about the CSS you are writing what its exactly doing.</p>
             </div>
           </section>
-          <!-- CSS Selectors
+          <!-- CSS Selectors -->
           <section class="main-section" id="CSS_Selectors">
             <header>CSS Selectors</header>
             <p>There are six types of selectors that can change HTML elements and depending on their specificity can override other selectors changes to an element.The main ones are type, class, and id. </p>
@@ -149,7 +152,7 @@
             </code>
             <p class="note">For more information on the other selectors, visit this article called <a href="https://css-tricks.com/how-css-selectors-work/">Beginner Concepts: How CSS Selectors Work</a> by <a href="https://css-tricks.com/">CSS-Tricks</a>.</p>
           </section>
-          <!-- CSS Units 
+          <!-- CSS Units -->
           <section class="main-section" id="CSS_Units">
             <header>CSS Units</header>
             <p>There are many different units that can be paired with values. Some properties don't even require units. Here are some good units to know and use:</p>
@@ -177,7 +180,7 @@
             </div>
             <p class="note">For more information about units; vist <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units">MDN CSS values and units</a>. Watch <a href="https://www.youtube.com/watch?v=H4UtKu11yXg">Simple Explanation Of rem & em CSS Units</a>.</p>
           </section>
-          <!-- CSS Box Model 
+          <!-- CSS Box Model -->
           <section class="main-section" id="CSS_Box_Model">
             <header>CSS Box Model</header>
             <p>Every element on an HTML page is rendered by the browser's engine as a rectangular box. All elements' rectangular box consist of four parts. These parts are called content, padding, margin, and border. Example of the box model is below.</p>
@@ -198,21 +201,18 @@
             <p>The CSS Box Model is very important to know and understand in order to style elements how you want them on the page. With the example below; picture the margin as the white space surrounding the black solid line border. Margin seperates elements from each other. Padding is the white space inside the border box seperating the content and border from each other. Content is the text "CSS Box Model" itself.</p>
             <p id="box-model-example">CSS Box Model</p>
           </section>
-          Reference
+          <!-- Reference -->
           <section class="main-section" id="Reference">
             <header>Reference</header>
             <p>All documentation on this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN CSS Section</a></p>
           </section>
         </main>
   </div>
-
-  <!-- FOOTER 
+  <!-- FOOTER -->
   <footer id="footer">
     <p>Taylor Martinez | CSS Documentation Page, Copyright &copy; 2019</p>
   </footer>
-
--->
-  <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-  <script src="doc.js"></script> -->
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script src="doc.js"></script>
 </body>
 </html>
