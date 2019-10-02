@@ -4,7 +4,7 @@ var realIcon = document.querySelector('.hamburger-icon > div');
 var cross = document.querySelector('.cross');
 
 function navAppear() {
-  icon.addEventListener('click', () => {
+  icon.addEventListener('click', () => {   
     nav.classList.toggle('nav-hidden');
     nav.classList.toggle('nav-bar-visible');
     icon.classList.toggle('hidden');
@@ -31,6 +31,8 @@ function navLinksClose(){
 
   for(var i = 0; i < nav_links.length; i++){
     nav_links[i].addEventListener('click', () => {
+      cross.classList.toggle('hidden');
+      cross.classList.toggle('cross-visible');
       nav.classList.toggle('nav-bar-visible');
       nav.classList.toggle('nav-hidden');
       icon.classList.toggle('cross-visible');

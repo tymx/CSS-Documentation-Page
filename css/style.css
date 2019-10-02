@@ -159,11 +159,21 @@
   display: none;
 }
 
+.anchor {
+  position: relative;
+}
+
+.anchor header {
+  position: absolute;
+  left: 0px;
+  top: -50px;
+}
+
 /* DOCUMENTATION */
 
 .tech-column {
   position: absolute;
-  top: 50px;
+  top: 100px;
 }
 
 .note{
